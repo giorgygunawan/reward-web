@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classnames from 'classnames'
 import Button, { Theme as ButtonTheme, Size as ButtonSize } from '../../../atoms/Button'
 import Label, { Color as LabelColor, Level as LabelLevel} from '../../../atoms/Label'
+import Container, { CloseButtonType } from '../Container'
 
 import './style.css'
 
@@ -10,20 +11,16 @@ export const Type = {
   DUAL_BUTTON: 'molecules-modal-dialog-dual-button'
 }
 
-
 export const ButtonAlignment = {
   VERTICAL: 'flex flex-column',
   HORIZONTAL: 'flex flex-row'
 }
 
-export const CloseButtonType = {
-  HIDE: 'molecules-modal-dialog-close-button-type-hide',
-  CROSS: 'molecules-modal-dialog-close-button-type-cross'
-}
-
 type Props = {
   title: string,
+  hideTitle: boolean,
   subtitle: string,
+  hideSubtitle: boolean,
   negativeTitle: string,
   affirmativeTitle: string,
   type: string,
@@ -80,68 +77,51 @@ const getAffirmativeButtonTheme = (type: string, alignment: string): String => {
   }
 }
 
-const getCloseButtonType = (type: string, onCloseButtonClick: Function) => {
-  switch(type) {
-    case CloseButtonType.HIDE:
-      return (
-      <Button onClick={onCloseButtonClick} theme={ButtonTheme.TEXT} size={ButtonSize.NONE} className="self-end molecules-modal-dialog-button-close">
-        <Label color={LabelColor.PRIMARY} level={LabelLevel.BODY_BOLD}>
-          hide
-        </Label>
-      </Button>
-    )
-    case CloseButtonType.CROSS:
-      return (
-        <Button onClick={onCloseButtonClick} theme={ButtonTheme.TEXT} size={ButtonSize.NONE} className="self-end molecules-modal-dialog-button-close">
-          <Label color={LabelColor.BLACK} level={LabelLevel.H2}>
-            <i class="fa fa-close"></i>
-          </Label>
-        </Button>
-    )
-    default:
-    return (
-    <Button onClick={onCloseButtonClick} theme={ButtonTheme.TEXT} size={ButtonSize.NONE} className="self-end molecules-modal-dialog-button-close">
-      <Label color={LabelColor.PRIMARY} level={LabelLevel.BODY_BOLD}>
-        hide
-      </Label>
-    </Button>
-  )
-  }
 
+const getAffirmativeLabelColor = (type: string): String => {
+  switch(type) {
+    case Type.ONE_BUTTON:
+      return LabelColor.BLACK
+    case Type.DUAL_BUTTON:
+      return LabelColor.WHITE
+    default:
+      return LabelColor.BLACK
+  }
 }
 
 const Dialog = (props: Props): Component => {
-  const { title, subtitle, children, className, negativeTitle, affirmativeTitle, type, buttonAlignment, closeButtonType, onNegativeButtonClick, onAffirmativeButtonClick, onCloseButtonClick } = props
+  const { title, subtitle, children, className, negativeTitle, affirmativeTitle, type, buttonAlignment, closeButtonType, onNegativeButtonClick, onAffirmativeButtonClick, onCloseButtonClick, hideTitle, hideSubtitle } = props
   const classProps = classnames(
     "molecules-modal-dialog",
     className
   )
   return (
-    <div className= {classProps}>
-      {getCloseButtonType(closeButtonType, onCloseButtonClick)}
-      <Label color={LabelColor.BLACK} level={LabelLevel.H2_BOLD} className="molecules-modal-dialog-label-title"> {title} </Label>
-      <Label color={LabelColor.BLACK} level={LabelLevel.H2} className="molecules-modal-dialog-label-subtitle"> {subtitle} </Label>
+    <Container closeButtonType={closeButtonType} onCloseButtonClick={onCloseButtonClick} className= {classProps}>
+      <Label color={LabelColor.BLACK} level={LabelLevel.H2_BOLD} className={hideTitle ? "hidden" : "molecules-modal-dialog-label-title"}> {title} </Label>
+      <Label color={LabelColor.BLACK} level={LabelLevel.H2} className={hideSubtitle ? "hidden" : "molecules-modal-dialog-label-subtitle"}> {subtitle} </Label>
       {children}
       <div className={buttonAlignment}>
         <Button onClick={onNegativeButtonClick} theme={getNegativeButtonTheme(type)} size={ButtonSize.MEDIUM} className={getNegativeButtonClass(type, buttonAlignment)}>
           <Label color={LabelColor.BLACK} level={LabelLevel.BODY}> { negativeTitle } </Label>
         </Button>
         <Button onClick={onAffirmativeButtonClick} theme={getAffirmativeButtonTheme(type)} size={ButtonSize.MEDIUM} className={getAffirmativeButtonClass(type, buttonAlignment)}>
-          <Label color={LabelColor.WHITE} level={LabelLevel.BODY}> { affirmativeTitle } </Label>
+          <Label color={getAffirmativeLabelColor(type)} level={LabelLevel.BODY}> { affirmativeTitle } </Label>
         </Button>
       </div>
-    </div>
+    </Container>
   )
 }
 
 Dialog.defaultProps = {
   title: 'default title',
+  hideTitle: false,
   subtitle: 'default subtitle',
+  hideSubtitle: false,
   negativeTitle: 'default button title',
   affirmativeTitle: 'default button title',
   type: Type.DUAL_BUTTON,
-  CloseButtonType: CloseButtonType.HIDE,
-  buttonAlignment: ButtonAlignment.VERTICAL,
+  closeButtonType: CloseButtonType.HIDE,
+  buttonAlignment: ButtonAlignment.HORIZONTAL,
   onNegativeButtonClick:  () => {},
   onAffirmativeButtonClick:  () => {},
   onCloseButtonClick:  () => {},
