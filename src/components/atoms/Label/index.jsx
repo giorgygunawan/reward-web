@@ -39,9 +39,9 @@ const Label = (props: Props): Component => {
   )
 
   return (
-    <div className={classProps}>
+    <span className={classProps}>
       {children}
-    </div>
+    </span>
   )
 }
 
