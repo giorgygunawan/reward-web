@@ -3,15 +3,15 @@
 @import "_responsive.scss";
 
 %jumbo {
-  @include cinzel-black($f1);
+  @include lato-bold($f1);
 }
 
 %headline {
-  @include cinzel-black($f2);
+  @include lato-bold($f2);
 }
 
 %subheadline {
-  @include cinzel-bold($f3);
+  @include lato-bold($f3);
 }
 
 %body-bold {
