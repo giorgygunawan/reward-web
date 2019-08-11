@@ -1,0 +1,59 @@
+.atoms-label-level-h1 {
+  font-family: 'Cinzel';
+  font-weight: 900;
+  font-size: 2.25rem; }
+
+.atoms-label-level-h2 {
+  font-family: 'Cinzel';
+  font-weight: 700;
+  font-size: 1.5rem; }
+
+.atoms-label-level-body-bold {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 1rem; }
+
+.atoms-label-level-body {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 1rem; }
+
+.atoms-label-level-body-bold {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 1rem; }
+
+.atoms-label-level-caption {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 0.667rem; }
+
+.atoms-label-level-caption-bold {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 0.667rem; }
+
+.label {
+  -webkit-appearance: none;
+  display: block;
+  position: relative; }
+
+/* level */
+/* color */
+.atoms-label-color-primary {
+  color: #c4037a; }
+
+.atoms-label-color-secondary {
+  color: #AFB7CE; }
+
+.atoms-label-color-tertiary {
+  color: #F8FAFE; }
+
+.atoms-label-color-white {
+  color: #ffffff; }
+
+.atoms-label-color-black {
+  color: #000000; }
+
+.atoms-label-color-grey {
+  color: #c9c9c9; }

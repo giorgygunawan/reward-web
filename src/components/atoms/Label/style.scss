@@ -1,0 +1,61 @@
+@import "../../../styles/_responsive.scss";
+@import "../../../styles/_colors.scss";
+@import "../../../styles/_fontstyle.scss";
+@import "../../../styles/_sizes.scss";
+
+.label {
+  -webkit-appearance: none;
+  display: block;
+  position: relative;
+}
+
+/* level */
+.atoms-label-level-h1 {
+  @extend %headline;
+}
+
+.atoms-label-level-h2 {
+  @extend %subheadline;
+}
+
+.atoms-label-level-body {
+  @extend %body-regular;
+}
+
+.atoms-label-level-caption {
+  @extend %caption-regular;
+}
+
+
+.atoms-label-level-body-bold {
+  @extend %body-bold;
+}
+
+.atoms-label-level-caption-bold {
+  @extend %caption-bold;
+}
+
+/* color */
+.atoms-label-color-primary {
+  color: $primary
+}
+
+.atoms-label-color-secondary {
+  color: $secondary
+}
+
+.atoms-label-color-tertiary {
+  color: $tertiary
+}
+
+.atoms-label-color-white {
+  color: $white
+}
+
+.atoms-label-color-black {
+  color: $black
+}
+
+.atoms-label-color-grey {
+  color: $grey
+}
