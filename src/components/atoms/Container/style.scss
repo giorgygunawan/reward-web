@@ -1,0 +1,40 @@
+@import "../../../styles/_responsive.scss";
+@import "../../../styles/_colors.scss";
+@import "../../../styles/_fontstyle.scss";
+@import "../../../styles/_sizes.scss";
+
+.atoms-container {
+  -webkit-appearance: none;
+  display: block;
+  cursor: default;
+  position: relative;
+  text-align: center;
+}
+
+/* Size */
+.atoms-container-size-small {
+  padding: $space-small $space-regular;
+}
+
+.atoms-container-size-medium {
+  padding: $space-regular $space-medium;
+}
+
+.atoms-container-size-large {
+  padding: $space-medium $space-large;
+}
+
+/* Theme */
+.atoms-container-theme-fill {
+  color: $black;
+  background: $grey;
+  border-style: none;
+  border-radius: 4px;
+}
+
+.atoms-container-theme-border {
+  color: $black;
+  background: transparent;
+  border: 1px solid $grey;
+  border-radius: 4px;
+}

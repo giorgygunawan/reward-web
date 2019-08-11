@@ -1,0 +1,29 @@
+.atoms-container {
+  -webkit-appearance: none;
+  display: block;
+  cursor: default;
+  position: relative;
+  text-align: center; }
+
+/* Size */
+.atoms-container-size-small {
+  padding: 0.5rem 1rem; }
+
+.atoms-container-size-medium {
+  padding: 1rem 1.5rem; }
+
+.atoms-container-size-large {
+  padding: 1.5rem 2rem; }
+
+/* Theme */
+.atoms-container-theme-fill {
+  color: #000000;
+  background: #c9c9c9;
+  border-style: none;
+  border-radius: 4px; }
+
+.atoms-container-theme-border {
+  color: #000000;
+  background: transparent;
+  border: 1px solid #c9c9c9;
+  border-radius: 4px; }
