@@ -1,0 +1,45 @@
+@import "../../../styles/_responsive.scss";
+@import "../../../styles/_colors.scss";
+@import "../../../styles/_fontstyle.scss";
+@import "../../../styles/_sizes.scss";
+
+.atoms-option {
+  -webkit-appearance: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.atoms-option-container-radio {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  background: $white;
+  border-radius: 24px;
+  border: 2px solid $grey;
+}
+
+.atoms-option-container-radio-selected {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  background: $black;
+  border-radius: 24px;
+  border: 2px solid $black;
+}
+
+.atoms-option-radio {
+  display: none;
+}
+
+.atoms-option-radio-selected {
+  color: $white;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.atoms-option-value {
+  margin-left: $space-regular;
+}
