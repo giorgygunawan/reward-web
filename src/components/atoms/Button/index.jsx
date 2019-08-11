@@ -4,19 +4,19 @@ import classnames from 'classnames'
 
 import './style.css'
 
-export const ButtonType = {
+export const Type = {
   BUTTON: 'button',
   RESET: 'reset',
   SUBMIT: 'submit',
 }
 
-export const ButtonTheme = {
+export const Theme = {
   FILL: 'atoms-button-theme-fill',
   BORDER: 'atoms-button-theme-border',
   TEXT: 'atoms-button-theme-text'
 }
 
-export const ButtonSize = {
+export const Size = {
   SMALL: 'atoms-button-size-small',
   MEDIUM: 'atoms-button-size-medium',
   LARGE: 'atoms-button-size-large',
@@ -52,9 +52,9 @@ const Button = (props: Props): Component => {
 }
 
 Button.defaultProps = {
-  type: ButtonType.BUTTON,
-  theme: ButtonTheme.FILL,
-  size: ButtonSize.SMALL,
+  type: Type.BUTTON,
+  theme: Theme.FILL,
+  size: Size.SMALL,
   onClick: () => {},
   className: '',
   disabled: false,
