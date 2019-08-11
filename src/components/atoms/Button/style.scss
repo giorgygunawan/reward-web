@@ -25,7 +25,6 @@
 
 /* Theme */
 .atoms-button-theme-fill {
-  @extend %body-bold;
   color: $white;
   background: $primary;
   border-style: none;
@@ -33,7 +32,6 @@
 }
 
 .atoms-button-theme-border {
-  @extend %body-bold;
   color: $black;
   background: transparent;
   border: 2px solid $black;
@@ -41,7 +39,6 @@
 }
 
 .atoms-button-theme-text {
-  @extend %body-bold;
   color: $primary;
   background: transparent;
   border-style: none;
