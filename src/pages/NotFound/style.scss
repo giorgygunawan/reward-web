@@ -1,0 +1,25 @@
+@import "../../styles/_responsive.scss";
+@import "../../styles/_colors.scss";
+@import "../../styles/_fontstyle.scss";
+
+.notFoundContainer {
+  width: 100vw;
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include respond-to(handhelds) { padding: 10px 10px; }
+  @include respond-to(medium-screens) { padding: 20px 40px; }
+
+  .header {
+    @extend %body-bold;
+    color: $primary;
+  }
+
+  .subheader {
+    @extend %body-regular;
+    color: $primary;
+  }
+}

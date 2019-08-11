@@ -1,0 +1,29 @@
+@mixin cinzel-black($size) {
+  font-family: 'Cinzel';
+  font-weight: 900;
+  font-size: $size;
+}
+
+@mixin cinzel-bold($size) {
+  font-family: 'Cinzel';
+  font-weight: 700;
+  font-size: $size;
+}
+
+@mixin cinzel-regular($size) {
+  font-family: 'Cinzel';
+  font-weight: 400;
+  font-size: $size;
+}
+
+@mixin lato-regular($size) {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: $size;
+}
+
+@mixin lato-bold($size) {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: $size;
+}

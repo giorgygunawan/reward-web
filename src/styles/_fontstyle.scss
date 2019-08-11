@@ -1,0 +1,35 @@
+@import "_font_sizes.scss";
+@import "_typography.scss";
+@import "_responsive.scss";
+
+%jumbo {
+  @include cinzel-black($f1);
+}
+
+%headline {
+  @include cinzel-black($f2);
+}
+
+%subheadline {
+  @include cinzel-bold($f3);
+}
+
+%body-bold {
+  @include lato-bold($f4);
+}
+
+%body-regular {
+  @include lato-regular($f4);
+}
+
+%body-bold {
+  @include lato-bold($f4);
+}
+
+%caption-regular {
+  @include lato-bold($f5);
+}
+
+%caption-bold {
+  @include lato-regular($f5);
+}
