@@ -3,9 +3,8 @@
 @import "../../../styles/_fontstyle.scss";
 @import "../../../styles/_sizes.scss";
 
-.label {
+.atoms-label {
   -webkit-appearance: none;
-  display: block;
   position: relative;
 }
 
@@ -26,6 +25,9 @@
   @extend %caption-regular;
 }
 
+.atoms-label-level-h2-bold {
+  @extend %subheadline-bold;
+}
 
 .atoms-label-level-body-bold {
   @extend %body-bold;

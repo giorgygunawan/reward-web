@@ -5,11 +5,14 @@
   position: relative; }
 
 /* Size */
+.atoms-button-size-none {
+  padding: 0; }
+
 .atoms-button-size-small {
   padding: 0.5rem 1rem; }
 
 .atoms-button-size-medium {
-  padding: 1rem 1.5rem; }
+  padding: 1rem 1rem; }
 
 .atoms-button-size-large {
   padding: 1.5rem 2rem; }
@@ -19,13 +22,15 @@
   color: #ffffff;
   background: #c4037a;
   border-style: none;
+  border: 2px solid #c4037a;
   border-radius: 4px; }
 
 .atoms-button-theme-border {
   color: #000000;
   background: transparent;
   border: 2px solid #000000;
-  border-radius: 4px; }
+  border-radius: 4px;
+  box-sizing: border-box; }
 
 .atoms-button-theme-text {
   color: #c4037a;

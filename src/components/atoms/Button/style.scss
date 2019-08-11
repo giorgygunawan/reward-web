@@ -11,12 +11,16 @@
 }
 
 /* Size */
+.atoms-button-size-none {
+  padding: 0;
+}
+
 .atoms-button-size-small {
   padding: $space-small $space-regular;
 }
 
 .atoms-button-size-medium {
-  padding: $space-regular $space-medium;
+  padding: $space-regular $space-regular;
 }
 
 .atoms-button-size-large {
@@ -28,6 +32,7 @@
   color: $white;
   background: $primary;
   border-style: none;
+  border: 2px solid $primary;
   border-radius: 4px;
 }
 
@@ -36,6 +41,7 @@
   background: transparent;
   border: 2px solid $black;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .atoms-button-theme-text {

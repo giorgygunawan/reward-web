@@ -17,6 +17,7 @@ export const Theme = {
 }
 
 export const Size = {
+  NONE: 'atoms-button-size-none',
   SMALL: 'atoms-button-size-small',
   MEDIUM: 'atoms-button-size-medium',
   LARGE: 'atoms-button-size-large',

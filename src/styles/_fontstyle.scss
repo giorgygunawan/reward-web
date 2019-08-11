@@ -7,10 +7,18 @@
 }
 
 %headline {
+  @include lato-regular($f2);
+}
+
+%headline-bold {
   @include lato-bold($f2);
 }
 
 %subheadline {
+  @include lato-regular($f3);
+}
+
+%subheadline-bold {
   @include lato-bold($f3);
 }
 

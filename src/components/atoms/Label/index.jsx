@@ -7,6 +7,7 @@ import './style.css'
 export const Level = {
   H1: 'atoms-label-level-h1',
   H2: 'atoms-label-level-h2',
+  H2_BOLD: 'atoms-label-level-h2-bold',
   BODY: 'atoms-label-level-body',
   BODY_BOLD: 'atoms-label-level-body-bold',
   CAPTION: 'atoms-label-level-caption',
