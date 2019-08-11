@@ -1,0 +1,53 @@
+.atoms-button-theme-fill, .atoms-button-theme-border, .atoms-button-theme-text {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 1rem; }
+
+.atoms-button-theme-fill, .atoms-button-theme-border, .atoms-button-theme-text {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 1rem; }
+
+.button {
+  -webkit-appearance: none;
+  display: block;
+  cursor: pointer;
+  position: relative; }
+
+/* Size */
+.atoms-button-size-small {
+  padding: 0.5rem 1rem; }
+
+.atoms-button-size-medium {
+  padding: 1rem 1.5rem; }
+
+.atoms-button-size-large {
+  padding: 1.5rem 2rem; }
+
+/* Theme */
+.atoms-button-theme-fill {
+  color: #ffffff;
+  background: #c4037a;
+  border-style: none;
+  border-radius: 4px; }
+
+.atoms-button-theme-border {
+  color: #000000;
+  background: transparent;
+  border: 2px solid #000000;
+  border-radius: 4px; }
+
+.atoms-button-theme-text {
+  color: #c4037a;
+  background: transparent;
+  border-style: none; }
+
+.disabled {
+  color: #ffffff;
+  background: #c9c9c9;
+  border-color: #c9c9c9;
+  cursor: default;
+  border-radius: 4px; }
+
+.cobadeh {
+  color: red; }
