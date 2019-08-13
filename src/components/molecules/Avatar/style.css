@@ -1,0 +1,19 @@
+.molecules-avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.molecules-avatar-image {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #000000; }
+
+.molecules-avatar-label-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem; }
+
+.molecules-avatar-label-title {
+  margin-bottom: 0.25rem; }

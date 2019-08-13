@@ -1,0 +1,28 @@
+@import "../../../styles/_responsive.scss";
+@import "../../../styles/_colors.scss";
+@import "../../../styles/_fontstyle.scss";
+@import "../../../styles/_sizes.scss";
+
+.molecules-avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.molecules-avatar-image {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid $black;
+}
+
+.molecules-avatar-label-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: $space-regular;
+}
+
+.molecules-avatar-label-title {
+  margin-bottom: $space-micro;
+}
