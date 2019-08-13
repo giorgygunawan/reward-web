@@ -1,0 +1,22 @@
+@import "../../../styles/_responsive.scss";
+@import "../../../styles/_colors.scss";
+@import "../../../styles/_fontstyle.scss";
+@import "../../../styles/_sizes.scss";
+
+.molecules-card {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: 0px 0px 4px;
+}
+
+.molecules-card-title {
+  margin: $space-medium;
+}
+
+.molecules-card-avatar {
+  margin: $space-medium;
+  margin-bottom: 0;
+}
