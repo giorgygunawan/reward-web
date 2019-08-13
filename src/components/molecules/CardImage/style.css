@@ -1,0 +1,21 @@
+.molecules-card-image-container {
+  overflow: hidden;
+  height: 200px;
+  position: relative; }
+
+.molecules-card-image {
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px; }
+
+.molecules-card-image-label {
+  position: absolute;
+  right: 0px;
+  top: 1rem;
+  padding: 0.5rem;
+  background: #c4037a;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px; }

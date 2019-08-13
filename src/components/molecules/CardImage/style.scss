@@ -1,0 +1,29 @@
+@import "../../../styles/_responsive.scss";
+@import "../../../styles/_colors.scss";
+@import "../../../styles/_fontstyle.scss";
+@import "../../../styles/_sizes.scss";
+
+.molecules-card-image-container {
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+}
+
+.molecules-card-image {
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+.molecules-card-image-label {
+  position: absolute;
+  right: 0px;
+  top: $space-regular;
+  padding: $space-small;
+  background: $primary;
+  border-bottom-left-radius: $border-radius;
+  border-top-left-radius: $border-radius;
+}
