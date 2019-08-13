@@ -4,6 +4,9 @@
   position: relative; }
 
 .molecules-card-image {
+  object-fit: fill;
+  min-width: 100%;
+  min-height: 100%;
   position: absolute;
   margin: auto;
   top: 0px;
