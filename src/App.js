@@ -4,6 +4,7 @@ import { AnimatedSwitch } from 'react-router-transition';
 import NotFound from './pages/NotFound';
 import Home from './pages/Home';
 import NavigationBar from './components/organism/NavigationBar'
+import Footer from './components/organism/Footer'
 import './App.css';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route component={NotFound} />
             </AnimatedSwitch>
+            <Footer/>
           </div>
       </Router>
     )
