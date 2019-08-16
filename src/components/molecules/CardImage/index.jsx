@@ -20,7 +20,7 @@ const CardImage = (props: Props): Component => {
   return (
     <div className= {classProps}>
         <img className="molecules-card-image" src={imageSource} alt={imageAlt} />
-        <Label color={LabelColor.WHITE} level={LabelLevel.BODY_BOLD} className="molecules-card-image-label"> {labelTitle} </Label>
+        <Label className={ labelTitle == null ? "hidden" : "molecules-card-image-label" }color={LabelColor.WHITE} level={LabelLevel.BODY_BOLD}> {labelTitle} </Label>
     </div>
   )
 }

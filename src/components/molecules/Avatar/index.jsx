@@ -22,7 +22,7 @@ const Avatar = (props: Props): Component => {
   )
   return (
     <div className= {classProps}>
-      <img src={imageSource} alt={imageAlt} class="molecules-avatar-image"/>
+      <img src={imageSource} alt={imageAlt} className="molecules-avatar-image"/>
       <div className="molecules-avatar-label-container">
         <Label className="molecules-avatar-label-title" level={LabelLevel.H2_BOLD}>{title}</Label>
         <Label className="molecules-avatar-label-subtitle" level={LabelLevel.BODY}>{subtitle}</Label>

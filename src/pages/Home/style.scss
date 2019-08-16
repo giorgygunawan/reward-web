@@ -1,0 +1,52 @@
+@import "../../styles/_responsive.scss";
+@import "../../styles/_colors.scss";
+@import "../../styles/_fontstyle.scss";
+@import "../../styles/_sizes.scss";
+
+.test-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-primary {
+  height: 30px;
+  background: $primary;
+}
+.absolute {
+  position: absolute;
+}
+.test-position {
+  top: 100px;
+}
+
+.pages-home-card-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.pages-home-container {
+  display: flex;
+  flex-direction: column;
+  margin: $space-medium;
+}
+
+.pages-home-label-title {
+  margin: $space-small;
+}
+
+.pages-home-label-rewards {
+  margin: $space-small;
+}
+
+.pages-home-button-sort {
+
+}
+
+.pages-home-card-list-header-container {
+  display: flex;
+  flex-direction: row;
+}
+.empty-space {
+  flex-grow: 2;
+}

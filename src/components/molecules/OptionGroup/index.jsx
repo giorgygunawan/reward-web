@@ -21,6 +21,7 @@ class OptionGroup extends Component {
           selectedIndex: index,
           selectedValue: this.props.options[index],
         });
+        this.props.onOptionSelected(this.props.options[index])
     }
 
 
@@ -33,7 +34,7 @@ class OptionGroup extends Component {
     return (
       <div className={classProps}>
         {options.map( (option, index) =>
-          <Option key={index} className="molecules-option-group-spacing" isSelected={this.state.selectedIndex === index} index={index} onClick={this.selectOption.bind(this)}>
+          <Option key={index} className="molecules-option-group-spacing" isSelected={(this.state.selectedIndex == null) ? (this.props.defaultSelectedIndex === index) : (this.state.selectedIndex === index)} index={index} onClick={this.selectOption.bind(this)}>
             <Label key={index} level={LabelLevel.H2_BOLD}>{option}</Label>
           </Option>
         )}
@@ -44,6 +45,8 @@ class OptionGroup extends Component {
 
 OptionGroup.propTypes = {
   options: PropTypes.array,
+  onOptionSelected: Function,
+  defaultSelectedIndex: Number,
   className: PropTypes.string
 }
 

@@ -1,0 +1,7 @@
+.organism-navigation-bar {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #c9c9c9; }
+
+.organism-navigation-bar-title {
+  padding: 1.5rem; }

@@ -6,10 +6,11 @@
 .molecules-card {
   display: flex;
   flex-direction: column;
-  width: 40vw;
+  width: 400px;
+  margin: $space-small;
   border-radius: $border-radius;
   overflow: hidden;
-  box-shadow: 0px 0px 4px;
+  box-shadow: 0px 0px 4px $grey;
 }
 
 .molecules-card-title {

@@ -1,0 +1,23 @@
+.organism-modal-dialog-label-title {
+  margin-top: 0.5rem; }
+
+.organism-modal-dialog-label-subtitle {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem; }
+
+.organism-modal-negative-button-dual {
+  margin: 0.5rem 0; }
+
+.organism-modal-negative-button-dual-horizontal {
+  margin: 0.5rem 0;
+  margin-right: 0.5rem; }
+
+.organism-modal-affirmative-button-one {
+  margin: 0.5rem 0; }
+
+.organism-modal-affirmative-button-dual {
+  margin: 0.5rem 0; }
+
+.organism-modal-affirmative-button-dual-horizontal {
+  margin: 0.5rem 0;
+  margin-left: 0.5rem; }

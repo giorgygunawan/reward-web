@@ -13,24 +13,28 @@
   @extend %headline;
 }
 
+.atoms-label-level-h1-bold {
+  @extend %headline-bold;
+}
+
 .atoms-label-level-h2 {
   @extend %subheadline;
-}
-
-.atoms-label-level-body {
-  @extend %body-regular;
-}
-
-.atoms-label-level-caption {
-  @extend %caption-regular;
 }
 
 .atoms-label-level-h2-bold {
   @extend %subheadline-bold;
 }
 
+.atoms-label-level-body {
+  @extend %body-regular;
+}
+
 .atoms-label-level-body-bold {
   @extend %body-bold;
+}
+
+.atoms-label-level-caption {
+  @extend %caption-regular;
 }
 
 .atoms-label-level-caption-bold {

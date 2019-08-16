@@ -3,11 +3,12 @@
 @import "../../../styles/_fontstyle.scss";
 @import "../../../styles/_sizes.scss";
 
-.molecules-option-group {
-
+.organism-navigation-bar {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid $grey;
 }
 
-.molecules-option-group-spacing {
-  margin-top: $space-regular;
-  margin-bottom: $space-regular;
+.organism-navigation-bar-title {
+  padding: $space-medium;
 }

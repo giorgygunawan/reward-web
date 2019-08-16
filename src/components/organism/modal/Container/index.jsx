@@ -6,8 +6,8 @@ import Label, { Color as LabelColor, Level as LabelLevel} from '../../../atoms/L
 import './style.css'
 
 export const CloseButtonType = {
-  HIDE: 'molecules-modal-container-close-button-type-hide',
-  CROSS: 'molecules-modal-container-close-button-type-cross'
+  HIDE: 'organism-modal-container-close-button-type-hide',
+  CROSS: 'organism-modal-container-close-button-type-cross'
 }
 
 type Props = {
@@ -21,7 +21,7 @@ const getCloseButtonType = (type: string, onCloseButtonClick: Function) => {
   switch(type) {
     case CloseButtonType.HIDE:
       return (
-      <Button onClick={onCloseButtonClick} theme={ButtonTheme.TEXT} size={ButtonSize.NONE} className="self-end molecules-modal-container-button-close">
+      <Button onClick={onCloseButtonClick} theme={ButtonTheme.TEXT} size={ButtonSize.NONE} className="self-end organism-modal-container-button-close">
         <Label color={LabelColor.PRIMARY} level={LabelLevel.BODY_BOLD}>
           hide
         </Label>
@@ -29,15 +29,15 @@ const getCloseButtonType = (type: string, onCloseButtonClick: Function) => {
     )
     case CloseButtonType.CROSS:
       return (
-        <Button onClick={onCloseButtonClick} theme={ButtonTheme.TEXT} size={ButtonSize.NONE} className="self-end molecules-modal-container-button-close">
+        <Button onClick={onCloseButtonClick} theme={ButtonTheme.TEXT} size={ButtonSize.NONE} className="self-end organism-modal-container-button-close">
           <Label color={LabelColor.BLACK} level={LabelLevel.H2}>
-            <i class="fa fa-close"></i>
+            <i className="fa fa-close"></i>
           </Label>
         </Button>
     )
     default:
     return (
-    <Button onClick={onCloseButtonClick} theme={ButtonTheme.TEXT} size={ButtonSize.NONE} className="self-end molecules-modal-container-button-close">
+    <Button onClick={onCloseButtonClick} theme={ButtonTheme.TEXT} size={ButtonSize.NONE} className="self-end organism-modal-container-button-close">
       <Label color={LabelColor.PRIMARY} level={LabelLevel.BODY_BOLD}>
         hide
       </Label>
@@ -50,7 +50,7 @@ const getCloseButtonType = (type: string, onCloseButtonClick: Function) => {
 const Container = (props: Props): Component => {
   const { children, className, closeButtonType, onCloseButtonClick } = props
   const classProps = classnames(
-    "molecules-modal-container",
+    "organism-modal-container",
     className
   )
   return (

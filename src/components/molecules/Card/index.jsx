@@ -12,7 +12,7 @@ type Props = {
   cardImageAlt: string,
   avatarImageSource: string,
   avatarImageAlt: string,
-  avatarTitle: string, 
+  avatarTitle: string,
   avatarSubtitle: string,
   cardTitle: string,
   children: React.Node,
@@ -29,7 +29,7 @@ const Card = (props: Props): Component => {
     <div className= {classProps}>
       <CardImage className="molecules-card-card-image" imageSource={cardImageSource} imageAlt={cardImageAlt} labelTitle={cardImageLabelTitle} />
       <Avatar className="molecules-card-avatar" imageSource={avatarImageSource} imageAlt={avatarImageAlt} title={avatarTitle} subtitle={avatarSubtitle} />
-      <Label className="molecules-card-title" level={LabelLevel.H1} color={LabelColor.BLACK}>
+      <Label className="molecules-card-title" level={LabelLevel.H2_BOLD} color={LabelColor.BLACK}>
         {cardTitle}
       </Label>
     </div>

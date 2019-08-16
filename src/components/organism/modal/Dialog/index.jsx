@@ -7,8 +7,8 @@ import Container, { CloseButtonType } from '../Container'
 import './style.css'
 
 export const Type = {
-  ONE_BUTTON: 'molecules-modal-dialog-one-button',
-  DUAL_BUTTON: 'molecules-modal-dialog-dual-button'
+  ONE_BUTTON: 'organism-modal-dialog-one-button',
+  DUAL_BUTTON: 'organism-modal-dialog-dual-button'
 }
 
 export const ButtonAlignment = {
@@ -38,7 +38,7 @@ const getNegativeButtonClass = (type: string, alignment: string): String => {
     case Type.ONE_BUTTON:
       return "hidden"
     case Type.DUAL_BUTTON:
-      return alignment === ButtonAlignment.HORIZONTAL ? "molecules-modal-negative-button-dual-horizontal w-50" : "molecules-modal-negative-button-dual w-100"
+      return alignment === ButtonAlignment.HORIZONTAL ? "organism-modal-negative-button-dual-horizontal w-50" : "organism-modal-negative-button-dual w-100"
     default:
       return ""
   }
@@ -47,9 +47,9 @@ const getNegativeButtonClass = (type: string, alignment: string): String => {
 const getAffirmativeButtonClass = (type: string, alignment: string): String => {
   switch(type) {
     case Type.ONE_BUTTON:
-      return "molecules-modal-affirmative-button-one w-100"
+      return "organism-modal-affirmative-button-one w-100"
     case Type.DUAL_BUTTON:
-      return alignment === ButtonAlignment.HORIZONTAL ? "molecules-modal-affirmative-button-dual-horizontal w-50" : "molecules-modal-affirmative-button-dual w-100"
+      return alignment === ButtonAlignment.HORIZONTAL ? "organism-modal-affirmative-button-dual-horizontal w-50" : "organism-modal-affirmative-button-dual w-100"
     default:
       return ""
   }
@@ -92,13 +92,13 @@ const getAffirmativeLabelColor = (type: string): String => {
 const Dialog = (props: Props): Component => {
   const { title, subtitle, children, className, negativeTitle, affirmativeTitle, type, buttonAlignment, closeButtonType, onNegativeButtonClick, onAffirmativeButtonClick, onCloseButtonClick, hideTitle, hideSubtitle } = props
   const classProps = classnames(
-    "molecules-modal-dialog",
+    "organism-modal-dialog",
     className
   )
   return (
     <Container closeButtonType={closeButtonType} onCloseButtonClick={onCloseButtonClick} className= {classProps}>
-      <Label color={LabelColor.BLACK} level={LabelLevel.H2_BOLD} className={hideTitle ? "hidden" : "molecules-modal-dialog-label-title"}> {title} </Label>
-      <Label color={LabelColor.BLACK} level={LabelLevel.H2} className={hideSubtitle ? "hidden" : "molecules-modal-dialog-label-subtitle"}> {subtitle} </Label>
+      <Label color={LabelColor.BLACK} level={LabelLevel.H2_BOLD} className={hideTitle ? "hidden" : "organism-modal-dialog-label-title"}> {title} </Label>
+      <Label color={LabelColor.BLACK} level={LabelLevel.H2} className={hideSubtitle ? "hidden" : "organism-modal-dialog-label-subtitle"}> {subtitle} </Label>
       {children}
       <div className={buttonAlignment}>
         <Button onClick={onNegativeButtonClick} theme={getNegativeButtonTheme(type)} size={ButtonSize.MEDIUM} className={getNegativeButtonClass(type, buttonAlignment)}>

@@ -1,18 +1,11 @@
 .molecules-card-image-container {
   overflow: hidden;
-  height: 200px;
   position: relative; }
 
 .molecules-card-image {
-  object-fit: fill;
-  min-width: 100%;
-  min-height: 100%;
-  position: absolute;
-  margin: auto;
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
-  left: 0px; }
+  object-fit: cover;
+  width: 100%;
+  height: 250px; }
 
 .molecules-card-image-label {
   position: absolute;

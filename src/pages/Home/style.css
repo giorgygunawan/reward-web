@@ -1,0 +1,36 @@
+.test-container {
+  position: relative;
+  overflow: hidden; }
+
+.bg-primary {
+  height: 30px;
+  background: #c4037a; }
+
+.absolute {
+  position: absolute; }
+
+.test-position {
+  top: 100px; }
+
+.pages-home-card-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.pages-home-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem; }
+
+.pages-home-label-title {
+  margin: 0.5rem; }
+
+.pages-home-label-rewards {
+  margin: 0.5rem; }
+
+.pages-home-card-list-header-container {
+  display: flex;
+  flex-direction: row; }
+
+.empty-space {
+  flex-grow: 2; }
