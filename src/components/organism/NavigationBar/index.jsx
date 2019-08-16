@@ -22,7 +22,6 @@ const NavigationBar = (props: Props): Component => {
 }
 
 NavigationBar.defaultProps = {
-  imageAlt: 'default alt',
   className: ''
 }
 

@@ -23,7 +23,6 @@ const Footer = (props: Props): Component => {
 }
 
 Footer.defaultProps = {
-  imageAlt: 'default alt',
   className: ''
 }
 

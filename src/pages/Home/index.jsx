@@ -23,7 +23,6 @@ export default class Home extends Component {
   }
 
   render() {
-    console.log("is rendering");
     return (
       <div className="pages-home-container">
         <OptionGroupDialog className={this.state.isOptionGroupDialogHidden ? "hidden" : ""} isHidden={this.state.isOptionGroupDialogHidden} onCloseButtonClick={() => this.setOptionGroupDialogHidden(true)} defaultSelectedIndex={0} title="Sort by" hideSubtitle={true} options={['Latest','Expiring Soon','Flash Sales','A - Z','Z - A']} onOptionSelected={(selectedValue)=>{console.log(selectedValue)}}/>

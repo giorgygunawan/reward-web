@@ -1,0 +1,64 @@
+@import "../../../styles/_responsive.scss";
+@import "../../../styles/_colors.scss";
+@import "../../../styles/_fontstyle.scss";
+@import "../../../styles/_sizes.scss";
+
+.organism-reward-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.organism-reward-details-redemption-period-container, .organism-reward-details-website-container, .organism-reward-details-location-container {
+  display: flex;
+  flex-direction: row;
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin: $space-small;
+}
+
+.organism-reward-details-redemption-period-title, .organism-reward-details-website-title, .organism-reward-details-location-title {
+  align-self: flex-start;
+  width: 30%;
+}
+
+.organism-reward-details-redemption-period-subtitle, .organism-reward-details-website-subtitle,.organism-reward-details-location-subtitle {
+  align-self: flex-start;
+  width: 30%;
+}
+.organism-reward-details-avatar-container {
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin: $space-medium;
+}
+
+.organism-reward-details-avatar {
+
+}
+
+.organism-reward-details-title {
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin: $space-medium;
+}
+
+.organism-reward-details-subtitle {
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin: $space-medium;
+}
+
+.organism-reward-details-faq-list {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: $space-medium;
+}

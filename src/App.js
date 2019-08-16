@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { AnimatedSwitch } from 'react-router-transition';
 import NotFound from './pages/NotFound';
 import Home from './pages/Home';
+import Details from './pages/Details';
 import NavigationBar from './components/organism/NavigationBar'
 import Footer from './components/organism/Footer'
 import './App.css';
@@ -18,6 +19,7 @@ class App extends Component {
               atLeave={{ opacity: 0 }}
               atActive={{ opacity: 1 }}>
               <Route exact path="/" component={Home} />
+              <Route exact path="/details" component={Details} />
               <Route component={NotFound} />
             </AnimatedSwitch>
             <Footer/>
