@@ -16,14 +16,14 @@ type Props = {
 }
 
 const OptionGroupDialog = (props: Props): Component => {
-  const { title, subtitle, className, closeButtonType, onCloseButtonClick, hideTitle, hideSubtitle, options, onOptionSelected, defaultSelectedIndex } = props
+  const { title, subtitle, className, closeButtonType, onCloseButtonClick, hideTitle, hideSubtitle, options, onOptionSelected, defaultSelectedIndex, isHidden } = props
   const classProps = classnames(
     "organism-modal-option-group-dialog",
     className
   )
   return (
-    <div className={classProps}>
-        <Container className="organism-modal-option-group-dialog-container" closeButtonType={closeButtonType} onCloseButtonClick={onCloseButtonClick}>
+    <div className={isHidden ? "hidden" : "organism-modal-option-group-dialog-container"}>
+        <Container className={classProps} closeButtonType={closeButtonType} onCloseButtonClick={onCloseButtonClick}>
           <Label color={LabelColor.BLACK} level={LabelLevel.H2_BOLD} className={hideTitle ? "hidden" : "organism-modal-option-group-dialog-label-title"}> {title} </Label>
           <Label color={LabelColor.BLACK} level={LabelLevel.H2} className={hideSubtitle ? "hidden" : "organism-modal-option-group-dialog-label-subtitle"}> {subtitle} </Label>
           <OptionGroup defaultSelectedIndex={defaultSelectedIndex} options={options} onOptionSelected={(selectedValue) => onOptionSelected(selectedValue)}/>
