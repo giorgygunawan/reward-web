@@ -1,0 +1,6 @@
+.molecules-labeled-check-box-label {
+  padding-left: 0.5rem;
+  user-select: none; }
+
+.molecules-labeled-check-box-container {
+  cursor: pointer; }
