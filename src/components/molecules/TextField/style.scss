@@ -1,0 +1,36 @@
+@import "../../../styles/_responsive.scss";
+@import "../../../styles/_colors.scss";
+@import "../../../styles/_fontstyle.scss";
+@import "../../../styles/_sizes.scss";
+
+.molecules-text-field-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.molecules-text-field-misc-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: $space-regular;
+}
+
+.molecules-text-field {
+  padding: $space-regular;
+  border-radius: $border-radius;
+  border: 1px solid $black;
+}
+
+.molecules-text-field-font {
+  @extend %body-regular;
+  color: $black;
+}
+
+.molecules-text-field-invalid {
+  padding: $space-regular;
+  border-radius: $border-radius;
+  border: 1px solid $red;
+}
+
+.molecules-text-field-error {
+  padding-top: $space-regular;
+}

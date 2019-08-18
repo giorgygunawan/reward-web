@@ -1,0 +1,29 @@
+.molecules-text-field-font {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 1rem; }
+
+.molecules-text-field-container {
+  display: flex;
+  flex-direction: column; }
+
+.molecules-text-field-misc-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1rem; }
+
+.molecules-text-field {
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #000000; }
+
+.molecules-text-field-font {
+  color: #000000; }
+
+.molecules-text-field-invalid {
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #dc3d45; }
+
+.molecules-text-field-error {
+  padding-top: 1rem; }
