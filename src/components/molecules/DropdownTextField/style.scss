@@ -1,0 +1,42 @@
+@import "../../../styles/_responsive.scss";
+@import "../../../styles/_colors.scss";
+@import "../../../styles/_fontstyle.scss";
+@import "../../../styles/_sizes.scss";
+
+.molecules-dropdown-text-field-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.molecules-dropdown-text-field-misc-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: $space-regular;
+}
+
+.molecules-dropdown-text-field {
+  padding: $space-regular;
+  border-radius: $border-radius;
+  border: 1px solid $black;
+}
+
+.molecules-dropdown-text-field-invalid {
+  padding: $space-regular;
+  border-radius: $border-radius;
+  border: 1px solid $red;
+}
+
+.molecules-dropdown-text-field-error {
+  padding-top: $space-regular;
+}
+
+.molecules-dropdown-text-field-pseudo {
+  position: relative;
+  cursor: pointer;
+}
+
+.molecules-dropdown-text-field-arrow {
+  position: absolute;
+  right: $space-regular;
+  top:30%;
+}
