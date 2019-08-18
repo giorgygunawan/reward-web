@@ -25,7 +25,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="pages-home-container">
-        <OptionGroupDialog className={this.state.isOptionGroupDialogHidden ? "hidden" : ""} isHidden={this.state.isOptionGroupDialogHidden} onCloseButtonClick={() => this.setOptionGroupDialogHidden(true)} defaultSelectedIndex={0} title="Sort by" hideSubtitle={true} options={['Latest','Expiring Soon','Flash Sales','A - Z','Z - A']} onOptionSelected={(selectedValue)=>{console.log(selectedValue)}}/>
+        <OptionGroupDialog isHidden={this.state.isOptionGroupDialogHidden} onCloseButtonClick={() => this.setOptionGroupDialogHidden(true)} defaultSelectedIndex={0} title="Sort by" hideSubtitle={true} options={['Latest','Expiring Soon','Flash Sales','A - Z','Z - A']} onOptionSelected={(selectedValue)=>{console.log(selectedValue)}}/>
         <Label className="pages-home-label-title" level={Level.H1_BOLD} color={Color.BLACK}> Exclusive Reward for Astro Subscribers </Label>
         <div className="pages-home-card-list-header-container">
           <Label className="pages-home-label-rewards" level={Level.H2_BOLD} color={Color.BLACK}> REWARDS </Label>
