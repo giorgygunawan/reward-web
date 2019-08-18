@@ -21,7 +21,9 @@ export const Color = {
   TERTIARY: 'atoms-label-color-tertiary',
   WHITE: 'atoms-label-color-white',
   BLACK: 'atoms-label-color-black',
-  GREY: 'atoms-label-color-grey'
+  GREY: 'atoms-label-color-grey',
+  LIGHT_GREY: 'atoms-label-color-light-grey',
+  RED: 'atoms-label-color-red'
 }
 
 type Props = {
