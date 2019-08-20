@@ -6,8 +6,8 @@
   padding-right: 1.5rem; }
 
 .organism-sign-in-form-id-types-options-dialog {
-  width: 300px;
-  height: 300px; }
+  width: 260px;
+  height: 230px; }
 
 .organism-sign-in-form-button-cancel {
   width: 50%;
@@ -68,4 +68,15 @@
       width: 100%; } }
   @media only screen and (min-width: 601px) and (max-width: 899px) {
     .organism-sign-in-form-check-box {
+      width: 60%; } }
+
+.organism-sign-in-form-error-label {
+  width: 40%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
+  @media only screen and (max-width: 600px) {
+    .organism-sign-in-form-error-label {
+      width: 100%; } }
+  @media only screen and (min-width: 601px) and (max-width: 899px) {
+    .organism-sign-in-form-error-label {
       width: 60%; } }

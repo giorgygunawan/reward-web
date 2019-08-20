@@ -12,8 +12,8 @@
 }
 
 .organism-sign-in-form-id-types-options-dialog {
-  width: 300px;
-  height: 300px;
+  width: 260px;
+  height: 230px;
 }
 .organism-sign-in-form-button-cancel {
   width: 50%;
@@ -79,5 +79,17 @@
    @include respond-to(medium-screens) {
      width: 60%;
    }
+   padding-bottom: $space-medium;
+ }
+
+ .organism-sign-in-form-error-label {
+   width: 40%;
+   @include respond-to(handhelds) {
+     width: 100%;
+   }
+   @include respond-to(medium-screens) {
+     width: 60%;
+   }
+   padding-top: $space-medium;
    padding-bottom: $space-medium;
  }
