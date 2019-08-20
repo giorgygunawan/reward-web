@@ -7,7 +7,8 @@ import './style.css'
 
 export const CloseButtonType = {
   HIDE: 'organism-modal-container-close-button-type-hide',
-  CROSS: 'organism-modal-container-close-button-type-cross'
+  CROSS: 'organism-modal-container-close-button-type-cross',
+  NONE: 'organism-modal-container-close-button-type-none'
 }
 
 type Props = {
@@ -35,6 +36,8 @@ const getCloseButtonType = (type: string, onCloseButtonClick: Function) => {
           </Label>
         </Button>
     )
+    case CloseButtonType.NONE:
+      return null;
     default:
     return (
     <Button onClick={onCloseButtonClick} theme={ButtonTheme.TEXT} size={ButtonSize.NONE} className="self-end organism-modal-container-button-close">
