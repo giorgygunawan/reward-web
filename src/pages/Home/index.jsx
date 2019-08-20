@@ -6,7 +6,6 @@ import Label, { Level, Color } from '../../components/atoms/Label'
 import Card from '../../components/molecules/Card'
 import OptionGroupDialog from '../../components/organism/modal/OptionGroupDialog'
 import LoadingDialog from '../../components/organism/modal/LoadingDialog'
-import AppliedRoute from '../../components/generic/AppliedRoute'
 export default class Home extends Component {
 
   constructor() {
