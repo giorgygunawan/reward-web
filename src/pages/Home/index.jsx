@@ -47,6 +47,7 @@ export default class Home extends Component {
       {this.state.rewards.map( (value) =>
         <Card cardImageSource = {value.image}
           cardImageAlt = {value.title}
+          countDownDate = {parseInt(value.flash_sale_date, 10)}
           cardImageLabelTitle = {value.flash_sale_date !== '-1' && value.flash_sale_date ? 'flash sale' : null}
           avatarImageSource = { value.vendor_image }
           avatarImageAlt = { value.vendor }

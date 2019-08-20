@@ -57,7 +57,6 @@ CardImage.propTypes = {
 
 CardImage.defaultProps = {
   imageAlt: 'default alt',
-  countDownDate: 1566297450000,
   className: ''
 }
 
