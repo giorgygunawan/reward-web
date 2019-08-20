@@ -3,22 +3,10 @@
 @import "../../styles/_fontstyle.scss";
 @import "../../styles/_sizes.scss";
 
-.test-container {
-  position: relative;
-  overflow: hidden;
+.pages-home-sort-dialog {
+  width: 300px;
+  height: 280px;
 }
-
-.bg-primary {
-  height: 30px;
-  background: $primary;
-}
-.absolute {
-  position: absolute;
-}
-.test-position {
-  top: 100px;
-}
-
 .pages-home-card-list-container {
   display: flex;
   flex-direction: row;

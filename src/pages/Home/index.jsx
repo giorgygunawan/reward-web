@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { API } from "aws-amplify";
 import './style.css'
-import data from './data'
 import Button, { Theme, Size } from '../../components/atoms/Button'
 import Label, { Level, Color } from '../../components/atoms/Label'
 import Card from '../../components/molecules/Card'
@@ -24,6 +23,7 @@ export default class Home extends Component {
       const rewards = await this.getRewardsList();
       console.log(rewards);
       this.setState({ rewards });
+      this.sortRewardsBy('Latest');
     } catch (e) {
       alert(e);
     }
@@ -84,7 +84,7 @@ export default class Home extends Component {
     return (
       <div className="pages-home-container">
         <LoadingDialog isHidden={!this.state.isLoading}/>
-        <OptionGroupDialog isHidden={this.state.isOptionGroupDialogHidden} onCloseButtonClick={() => this.setOptionGroupDialogHidden(true)} defaultSelectedIndex={0} title="Sort by" hideSubtitle={true} options={['Latest','Expiring Soon','Flash Sales','A - Z','Z - A']} onOptionSelected={(selectedValue)=>{this.sortRewardsBy(selectedValue)}}/>
+        <OptionGroupDialog className="pages-home-sort-dialog" isHidden={this.state.isOptionGroupDialogHidden} onCloseButtonClick={() => this.setOptionGroupDialogHidden(true)} defaultSelectedIndex={0} title="Sort by" hideSubtitle={true} options={['Latest','Expiring Soon','Flash Sales','A - Z','Z - A']} onOptionSelected={(selectedValue)=>{this.sortRewardsBy(selectedValue)}}/>
         <Label className="pages-home-label-title" level={Level.H1_BOLD} color={Color.BLACK}> Exclusive Reward for Subscribers </Label>
         <div className="pages-home-card-list-header-container">
           <Label className="pages-home-label-rewards" level={Level.H2_BOLD} color={Color.BLACK}> REWARDS </Label>

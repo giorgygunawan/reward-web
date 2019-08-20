@@ -25,7 +25,7 @@ class LabeledCheckBox extends Component {
   }
 
   render() {
-    const { title, className, onChangeHandler } = this.props
+    const { title, className } = this.props
     const classProps = classnames(
       "molecules-labeled-check-box-container",
       className
