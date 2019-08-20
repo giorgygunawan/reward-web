@@ -7,6 +7,7 @@ import Details from './pages/Details';
 import Verification from './pages/Verification';
 import NavigationBar from './components/organism/NavigationBar'
 import Footer from './components/organism/Footer'
+import AppliedRoute from './components/generic/AppliedRoute'
 import './App.css';
 
 class App extends Component {
@@ -19,10 +20,10 @@ class App extends Component {
               atEnter={{ opacity: 0 }}
               atLeave={{ opacity: 0 }}
               atActive={{ opacity: 1 }}>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/details" component={Details} />
-              <Route exact path="/verify" component={Verification} />
-              <Route component={NotFound} />
+              <AppliedRoute exact path="/" component={Home} />
+              <AppliedRoute exact path="/details" component={Details} />
+              <AppliedRoute exact path="/verify" component={Verification} />
+              <AppliedRoute component={NotFound} />
             </AnimatedSwitch>
             <Footer/>
           </div>

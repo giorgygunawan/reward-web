@@ -6,7 +6,7 @@ import Label, { Level, Color } from '../../components/atoms/Label'
 import Card from '../../components/molecules/Card'
 import OptionGroupDialog from '../../components/organism/modal/OptionGroupDialog'
 import LoadingDialog from '../../components/organism/modal/LoadingDialog'
-
+import AppliedRoute from '../../components/generic/AppliedRoute'
 export default class Home extends Component {
 
   constructor() {
@@ -50,9 +50,9 @@ export default class Home extends Component {
           countDownDate = {parseInt(value.flash_sale_date, 10)}
           cardImageLabelTitle = {value.flash_sale_date !== '-1' && value.flash_sale_date ? 'flash sale' : null}
           avatarImageSource = { value.vendor_image }
-          avatarImageAlt = { value.vendor }
-          avatarTitle = { value.vendor }
-          avatarSubtitle = { value.type }
+          avatarImageAlt = { value.vendor_name }
+          avatarTitle = { value.vendor_name }
+          avatarSubtitle = { value.redemption_type }
           cardTitle = {value.title} />
       )}
     </div>
