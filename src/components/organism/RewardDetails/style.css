@@ -10,14 +10,22 @@
   flex-direction: row;
   align-self: center;
   margin: 0.5rem; }
+  @media only screen and (max-width: 600px) {
+    .organism-reward-details-redemption-period-container, .organism-reward-details-website-container, .organism-reward-details-location-container {
+      width: 80vw; } }
 
 .organism-reward-details-redemption-period-title, .organism-reward-details-website-title, .organism-reward-details-location-title {
   align-self: flex-start;
   width: 30%; }
+  @media only screen and (max-width: 600px) {
+    .organism-reward-details-redemption-period-title, .organism-reward-details-website-title, .organism-reward-details-location-title {
+      width: 60%; } }
 
 .organism-reward-details-redemption-period-subtitle, .organism-reward-details-website-subtitle, .organism-reward-details-location-subtitle {
-  align-self: flex-start;
-  width: 30%; }
+  align-self: flex-start; }
+  @media only screen and (max-width: 600px) {
+    .organism-reward-details-redemption-period-subtitle, .organism-reward-details-website-subtitle, .organism-reward-details-location-subtitle {
+      width: 60%; } }
 
 .organism-reward-details-avatar-container {
   width: 40vw;
@@ -25,6 +33,9 @@
   flex-direction: row;
   align-self: center;
   margin: 1.5rem; }
+  @media only screen and (max-width: 600px) {
+    .organism-reward-details-avatar-container {
+      width: 80vw; } }
 
 .organism-reward-details-title {
   width: 40vw;
@@ -32,6 +43,9 @@
   flex-direction: row;
   align-self: center;
   margin: 1.5rem; }
+  @media only screen and (max-width: 600px) {
+    .organism-reward-details-title {
+      width: 80vw; } }
 
 .organism-reward-details-subtitle {
   width: 40vw;
@@ -39,6 +53,9 @@
   flex-direction: row;
   align-self: center;
   margin: 1.5rem; }
+  @media only screen and (max-width: 600px) {
+    .organism-reward-details-subtitle {
+      width: 80vw; } }
 
 .organism-reward-details-faq-list {
   width: 40vw;
@@ -46,3 +63,6 @@
   flex-direction: column;
   align-self: center;
   margin: 1.5rem; }
+  @media only screen and (max-width: 600px) {
+    .organism-reward-details-faq-list {
+      width: 80vw; } }

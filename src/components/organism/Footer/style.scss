@@ -7,7 +7,18 @@
   display: flex;
   flex-direction: column;
   padding: $space-medium;
+  align-items: center;
 }
 .organism-footer-label {
+  width: 40vw;
   padding: $space-small;
+  text-align: center;
+
+  @include respond-to(handhelds) {
+    width: 90vw;
+    text-align: left;
+  }
+  @include respond-to(medium-screens) {
+    width: 60vw;
+  }
 }

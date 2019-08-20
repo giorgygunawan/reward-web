@@ -16,7 +16,7 @@ const NavigationBar = (props: Props): Component => {
   )
   return (
     <div className={classProps}>
-      <Label className="organism-navigation-bar-title" level={LabelLevel.H2_BOLD} color={LabelColor.PRIMARY}> ASTRO REWARDS </Label>
+      <Label className="organism-navigation-bar-title" level={LabelLevel.H2_BOLD} color={LabelColor.PRIMARY}> REWARDS </Label>
     </div>
   )
 }

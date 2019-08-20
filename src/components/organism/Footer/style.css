@@ -1,7 +1,17 @@
 .organism-footer {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem; }
+  padding: 1.5rem;
+  align-items: center; }
 
 .organism-footer-label {
-  padding: 0.5rem; }
+  width: 40vw;
+  padding: 0.5rem;
+  text-align: center; }
+  @media only screen and (max-width: 600px) {
+    .organism-footer-label {
+      width: 90vw;
+      text-align: left; } }
+  @media only screen and (min-width: 601px) and (max-width: 899px) {
+    .organism-footer-label {
+      width: 60vw; } }

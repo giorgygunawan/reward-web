@@ -42,6 +42,7 @@ class SignInForm extends Component {
       onCloseButtonClick={() => {this.setIdTypeOptionsHidden(true)}}
       onOptionSelected={(selectedValue)=>{console.log(selectedValue)}}/>
       <DropdownTextField
+      className="organism-sign-in-form-dropdown-text-field"
       textFieldLabelText="ID Number"
       textFieldHintText="Why Need This?"
       textFieldName="ID_NUMBER"
@@ -53,19 +54,21 @@ class SignInForm extends Component {
         this.setIdTypeOptionsHidden(false)
       }} />
       <TextField
+      className="organism-sign-in-form-text-field-id-number"
       textFieldPlaceHolder="E.g 570303135700"
       />
       <TextField
+      className="organism-sign-in-form-text-field-account-number"
       textFieldLabelText="Account / Smartcard Number"
       textFieldHintText="Sample"
       textFieldPlaceHolder="E.g 0931613456"
       />
-      <LabeledCheckBox title="Remember Account Number"/>
+    <LabeledCheckBox className="organism-sign-in-form-check-box" title="Remember Account Number"/>
       <div className="organism-sign-in-form-button-container">
-        <Button theme={Theme.BORDER}>
+        <Button className="organism-sign-in-form-button-cancel" theme={Theme.BORDER}>
           <Label level={LabelLevel.BODY_BOLD} color={LabelColor.BLACK}>CANCEL</Label>
         </Button>
-        <Button theme={Theme.FILL} >
+        <Button className="organism-sign-in-form-button-submit" theme={Theme.FILL} >
           <Label level={LabelLevel.BODY_BOLD} color={LabelColor.WHITE}>SUBMIT</Label>
         </Button>
       </div>

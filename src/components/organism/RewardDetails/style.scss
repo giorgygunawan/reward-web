@@ -16,16 +16,24 @@
   flex-direction: row;
   align-self: center;
   margin: $space-small;
+  @include respond-to(handhelds) {
+    width: 80vw;
+  }
 }
 
 .organism-reward-details-redemption-period-title, .organism-reward-details-website-title, .organism-reward-details-location-title {
   align-self: flex-start;
   width: 30%;
+  @include respond-to(handhelds) {
+    width: 60%;
+  }
 }
 
 .organism-reward-details-redemption-period-subtitle, .organism-reward-details-website-subtitle,.organism-reward-details-location-subtitle {
   align-self: flex-start;
-  width: 30%;
+  @include respond-to(handhelds) {
+    width: 60%;
+  }
 }
 .organism-reward-details-avatar-container {
   width: 40vw;
@@ -33,6 +41,9 @@
   flex-direction: row;
   align-self: center;
   margin: $space-medium;
+  @include respond-to(handhelds) {
+    width: 80vw;
+  }
 }
 
 .organism-reward-details-avatar {
@@ -45,6 +56,9 @@
   flex-direction: row;
   align-self: center;
   margin: $space-medium;
+  @include respond-to(handhelds) {
+    width: 80vw;
+  }
 }
 
 .organism-reward-details-subtitle {
@@ -53,6 +67,9 @@
   flex-direction: row;
   align-self: center;
   margin: $space-medium;
+  @include respond-to(handhelds) {
+    width: 80vw;
+  }
 }
 
 .organism-reward-details-faq-list {
@@ -61,4 +78,7 @@
   flex-direction: column;
   align-self: center;
   margin: $space-medium;
+  @include respond-to(handhelds) {
+    width: 80vw;
+  }
 }

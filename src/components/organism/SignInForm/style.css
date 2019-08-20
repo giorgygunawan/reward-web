@@ -1,11 +1,71 @@
 .organism-sign-in-form {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem; }
 
 .organism-sign-in-form-id-types-options-dialog {
   width: 300px;
   height: 300px; }
 
+.organism-sign-in-form-button-cancel {
+  width: 50%;
+  margin-right: 0.5rem; }
+
+.organism-sign-in-form-button-submit {
+  width: 50%;
+  margin-left: 0.5rem; }
+
 .organism-sign-in-form-button-container {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  padding-bottom: 2rem;
+  width: 40%; }
+  @media only screen and (max-width: 600px) {
+    .organism-sign-in-form-button-container {
+      width: 100%; } }
+  @media only screen and (min-width: 601px) and (max-width: 899px) {
+    .organism-sign-in-form-button-container {
+      width: 60%; } }
+
+.organism-sign-in-form-dropdown-text-field {
+  width: 40%;
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem; }
+  @media only screen and (max-width: 600px) {
+    .organism-sign-in-form-dropdown-text-field {
+      width: 100%; } }
+  @media only screen and (min-width: 601px) and (max-width: 899px) {
+    .organism-sign-in-form-dropdown-text-field {
+      width: 60%; } }
+
+.organism-sign-in-form-text-field-id-number {
+  width: 40%;
+  padding-bottom: 1.5rem; }
+  @media only screen and (max-width: 600px) {
+    .organism-sign-in-form-text-field-id-number {
+      width: 100%; } }
+  @media only screen and (min-width: 601px) and (max-width: 899px) {
+    .organism-sign-in-form-text-field-id-number {
+      width: 60%; } }
+
+.organism-sign-in-form-text-field-account-number {
+  width: 40%;
+  padding-bottom: 1.5rem; }
+  @media only screen and (max-width: 600px) {
+    .organism-sign-in-form-text-field-account-number {
+      width: 100%; } }
+  @media only screen and (min-width: 601px) and (max-width: 899px) {
+    .organism-sign-in-form-text-field-account-number {
+      width: 60%; } }
+
+.organism-sign-in-form-check-box {
+  width: 40%;
+  padding-bottom: 1.5rem; }
+  @media only screen and (max-width: 600px) {
+    .organism-sign-in-form-check-box {
+      width: 100%; } }
+  @media only screen and (min-width: 601px) and (max-width: 899px) {
+    .organism-sign-in-form-check-box {
+      width: 60%; } }
