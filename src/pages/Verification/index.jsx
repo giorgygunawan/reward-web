@@ -5,12 +5,13 @@ import SignInForm from '../../components/organism/SignInForm'
 
 export default class Verification extends Component {
   userSignedIn = () => {
+    this.props.userHasAuthenticated(true);
     this.props.history.goBack();
   }
   render() {
     return (
       <div className="pages-details-container">
-        <SignInForm userHasAuthenticated={this.props.userHasAuthenticated} userSignedIn={() => {this.userSignedIn()}}/>
+        <SignInForm userSignedIn={() => {this.userSignedIn()}}/>
       </div>
     )
   }
