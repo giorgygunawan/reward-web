@@ -28,6 +28,8 @@ class App extends Component {
     catch(e) {
       if (e !== 'No current user') {
         alert(e);
+      } else {
+        console.log('not logged in');
       }
     }
     this.setState({ isAuthenticating: false });
@@ -58,7 +60,7 @@ class App extends Component {
               atLeave={{ opacity: 0 }}
               atActive={{ opacity: 1 }}>
               <AppliedRoute exact path="/" component={Home} props={childProps} />
-              <AppliedRoute exact path="/details" component={Details} props={childProps} />
+              <AppliedRoute exact path="/details/:reward_id/:created_at" component={Details} props={childProps} />
               <AppliedRoute exact path="/verify" component={Verification} props={childProps} />
               <AppliedRoute component={NotFound} />
             </AnimatedSwitch>

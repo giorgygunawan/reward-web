@@ -1,3 +1,10 @@
 .pages-details-container {
   display: flex;
   flex-direction: column; }
+
+.pages-details-sticky-button {
+  word-break: break-all; }
+
+.pages-details-redeem-dialog {
+  width: 300px;
+  height: 220px; }

@@ -4,6 +4,7 @@ import Button, { Theme as ButtonTheme, Size as ButtonSize } from '../../../atoms
 import Label, { Color as LabelColor, Level as LabelLevel} from '../../../atoms/Label'
 import Container, { CloseButtonType } from '../Container'
 
+
 import './style.css'
 
 export const Type = {
@@ -26,6 +27,7 @@ type Props = {
   type: string,
   closeButtonType: string,
   buttonAlignment: string,
+  isHidden: boolean,
   onNegativeButtonClick: Function,
   onAffirmativeButtonClick: Function,
   onCloseButtonClick: Function,
@@ -90,25 +92,27 @@ const getAffirmativeLabelColor = (type: string): String => {
 }
 
 const Dialog = (props: Props): Component => {
-  const { title, subtitle, children, className, negativeTitle, affirmativeTitle, type, buttonAlignment, closeButtonType, onNegativeButtonClick, onAffirmativeButtonClick, onCloseButtonClick, hideTitle, hideSubtitle } = props
+  const { title, subtitle, children, className, negativeTitle, affirmativeTitle, type, buttonAlignment, closeButtonType, onNegativeButtonClick, onAffirmativeButtonClick, onCloseButtonClick, hideTitle, hideSubtitle, isHidden } = props
   const classProps = classnames(
     "organism-modal-dialog",
     className
   )
   return (
-    <Container closeButtonType={closeButtonType} onCloseButtonClick={onCloseButtonClick} className= {classProps}>
-      <Label color={LabelColor.BLACK} level={LabelLevel.H2_BOLD} className={hideTitle ? "hidden" : "organism-modal-dialog-label-title"}> {title} </Label>
-      <Label color={LabelColor.BLACK} level={LabelLevel.H2} className={hideSubtitle ? "hidden" : "organism-modal-dialog-label-subtitle"}> {subtitle} </Label>
-      {children}
-      <div className={buttonAlignment}>
-        <Button onClick={onNegativeButtonClick} theme={getNegativeButtonTheme(type)} size={ButtonSize.MEDIUM} className={getNegativeButtonClass(type, buttonAlignment)}>
-          <Label color={LabelColor.BLACK} level={LabelLevel.BODY}> { negativeTitle } </Label>
-        </Button>
-        <Button onClick={onAffirmativeButtonClick} theme={getAffirmativeButtonTheme(type)} size={ButtonSize.MEDIUM} className={getAffirmativeButtonClass(type, buttonAlignment)}>
-          <Label color={getAffirmativeLabelColor(type)} level={LabelLevel.BODY}> { affirmativeTitle } </Label>
-        </Button>
-      </div>
-    </Container>
+    <div className={isHidden ? "hidden" : "organism-modal-dialog-container"}>
+      <Container closeButtonType={closeButtonType} onCloseButtonClick={onCloseButtonClick} className= {classProps}>
+        <Label color={LabelColor.BLACK} level={LabelLevel.H2_BOLD} className={hideTitle ? "hidden" : "organism-modal-dialog-label-title"}> {title} </Label>
+        <Label color={LabelColor.BLACK} level={LabelLevel.H2} className={hideSubtitle ? "hidden" : "organism-modal-dialog-label-subtitle"}> {subtitle} </Label>
+        {children}
+        <div className={buttonAlignment}>
+          <Button onClick={onNegativeButtonClick} theme={getNegativeButtonTheme(type)} size={ButtonSize.MEDIUM} className={getNegativeButtonClass(type, buttonAlignment)}>
+            <Label color={LabelColor.BLACK} level={LabelLevel.BODY}> { negativeTitle } </Label>
+          </Button>
+          <Button onClick={onAffirmativeButtonClick} theme={getAffirmativeButtonTheme(type)} size={ButtonSize.MEDIUM} className={getAffirmativeButtonClass(type, buttonAlignment)}>
+            <Label color={getAffirmativeLabelColor(type)} level={LabelLevel.BODY}> { affirmativeTitle } </Label>
+          </Button>
+        </div>
+      </Container>
+    </div>
   )
 }
 

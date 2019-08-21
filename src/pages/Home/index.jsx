@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { API } from "aws-amplify";
+import { Link } from 'react-router-dom'
 import './style.css'
 import Button, { Theme, Size } from '../../components/atoms/Button'
 import Label, { Level, Color } from '../../components/atoms/Label'
@@ -20,7 +21,6 @@ export default class Home extends Component {
   async componentDidMount() {
     try {
       const rewards = await this.getRewardsList();
-      console.log(rewards);
       this.setState({ rewards });
       this.sortRewardsBy('Latest');
     } catch (e) {
@@ -30,7 +30,7 @@ export default class Home extends Component {
     this.setState({ isLoading: false });
   }
 
-  getRewardsList() {
+  async getRewardsList() {
     return API.get("rewards", "/rewards");
   }
 
@@ -44,15 +44,18 @@ export default class Home extends Component {
   renderRewardList() {
     return <div className="pages-home-card-list-container">
       {this.state.rewards.map( (value) =>
-        <Card cardImageSource = {value.image}
-          cardImageAlt = {value.title}
-          countDownDate = {parseInt(value.flash_sale_date, 10)}
-          cardImageLabelTitle = {value.flash_sale_date !== '-1' && value.flash_sale_date ? 'flash sale' : null}
-          avatarImageSource = { value.vendor_image }
-          avatarImageAlt = { value.vendor_name }
-          avatarTitle = { value.vendor_name }
-          avatarSubtitle = { value.redemption_type }
-          cardTitle = {value.title} />
+        <Link className="link" to={"/details/"+value.reward_id+"/"+value.created_at}>
+          <Card
+            cardImageSource = {value.image}
+            cardImageAlt = {value.title}
+            countDownDate = {parseInt(value.flash_sale_date, 10)}
+            cardImageLabelTitle = {value.flash_sale_date !== '-1' && value.flash_sale_date ? 'flash sale' : null}
+            avatarImageSource = { value.vendor_image }
+            avatarImageAlt = { value.vendor_name }
+            avatarTitle = { value.vendor_name }
+            avatarSubtitle = { value.redemption_type }
+            cardTitle = {value.title} />
+        </Link>
       )}
     </div>
   }

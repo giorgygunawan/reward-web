@@ -10,7 +10,7 @@ import 'font-awesome/css/font-awesome.css';
 
 Amplify.configure({
   Auth: {
-    mandatorySignIn: true,
+    mandatorySignIn: false,
     region: AwsConfig.cognito.REGION,
     userPoolId: AwsConfig.cognito.USER_POOL_ID,
     identityPoolId: AwsConfig.cognito.IDENTITY_POOL_ID,

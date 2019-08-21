@@ -12,21 +12,22 @@
   height: 64px;
   background-color: $white;
   z-index: 99;
+  box-shadow: 0px 0px 4px #c9c9c9; 
 }
 
 .organism-sticky-button-container {
   display: flex;
+  flex-direction: row;
   align-items: center;
   height: 100%;
   position: relative;
 }
 
 .organism-sticky-button-label {
-  position: absolute;
-  left: $space-medium;
+  margin: $space-small
 }
 
 .organism-sticky-button-button {
-  position: absolute;
-  right: $space-medium;
+  width: 150px;
+  margin: $space-small
 }
