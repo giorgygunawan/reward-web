@@ -64,6 +64,7 @@ class SignInForm extends Component {
         isLoading: false
       });
       this.props.userHasAuthenticated(true);
+      this.props.userSignedIn();
     } catch (e) {
       this.setState({
         isFormError: true,
@@ -137,7 +138,8 @@ class SignInForm extends Component {
 
 SignInForm.propTypes = {
   className: PropTypes.string,
-  userHasAuthenticated: Function
+  userHasAuthenticated: Function,
+  userSignedIn: Function
 }
 
 SignInForm.defaultProps = {

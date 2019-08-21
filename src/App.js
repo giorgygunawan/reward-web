@@ -52,7 +52,7 @@ class App extends Component {
       !this.state.isAuthenticating &&
       <Router>
           <div>
-            <NavigationBar isAuthenticated={this.state.isAuthenticated} handleLogout={() => this.handleLogout()}/>
+            <NavigationBar isAuthenticated={this.state.isAuthenticated} userHasAuthenticated={this.userHasAuthenticated}/>
             <AnimatedSwitch
               atEnter={{ opacity: 0 }}
               atLeave={{ opacity: 0 }}
