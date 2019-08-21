@@ -23,6 +23,10 @@ const handleLogin = (history) => {
     history.push('/verify');
 }
 
+const goToHome = (history) => {
+    history.push('/');
+}
+
 const NavigationBar = (props: Props): Component => {
   const { className, isAuthenticated, history, location, userHasAuthenticated } = props
   const classProps = classnames(
@@ -31,7 +35,9 @@ const NavigationBar = (props: Props): Component => {
   )
   return (
     <div className={classProps}>
-      <Label className="organism-navigation-bar-title" level={LabelLevel.H2_BOLD} color={LabelColor.PRIMARY}> REWARDS </Label>
+      <Button theme={Theme.TEXT} onClick={() => {goToHome(history)}}>
+        <Label className="organism-navigation-bar-title" level={LabelLevel.H2_BOLD} color={LabelColor.PRIMARY}> REWARDS </Label>
+      </Button>
       <div className="empty-space"></div>
       { isAuthenticated ?
         <Button theme={Theme.TEXT} onClick={() => {handleLogout(history, userHasAuthenticated)}}>
