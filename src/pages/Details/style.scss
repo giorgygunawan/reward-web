@@ -1,3 +1,8 @@
+@import "../../styles/_responsive.scss";
+@import "../../styles/_colors.scss";
+@import "../../styles/_fontstyle.scss";
+@import "../../styles/_sizes.scss";
+
 .pages-details-container {
   display: flex;
   flex-direction: column;
@@ -10,4 +15,23 @@
 .pages-details-redeem-dialog {
   width: 300px;
   height: 220px;
+}
+
+.pages-details-code-dialog {
+  width: 400px;
+  height:200px;
+
+  @include respond-to(handhelds) {
+    width: 280px;
+  }
+}
+
+.pages-details-qr-dialog {
+  width: 400px;
+  height:370px;
+
+  @include respond-to(handhelds) {
+    width: 280px;
+    height:390px;
+  }
 }

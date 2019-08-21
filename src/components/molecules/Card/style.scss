@@ -6,11 +6,16 @@
 .molecules-card {
   display: flex;
   flex-direction: column;
-  width: 420px;
+  width: 30vw;
   margin: $space-small;
   border-radius: $border-radius;
   overflow: hidden;
   box-shadow: 0px 0px 4px $grey;
+  @include respond-to(handhelds) { width: 80vw; }
+  @include respond-to(medium-screens) { width: 90vw; }
+  @include respond-to(wide-screens) { width: 30vw; }
+
+
 }
 
 .molecules-card-title {

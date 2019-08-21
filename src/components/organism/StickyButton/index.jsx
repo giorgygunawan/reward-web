@@ -26,7 +26,6 @@ class StickyButton extends Component {
       return null
     } else {
       return <Countdown date={time} onComplete={() => {
-          this.hideCountdownTimer();
           onTimerCompleted();
         }}/>
     }

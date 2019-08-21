@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { API } from "aws-amplify";
-import Countdown from 'react-countdown-now'
 import './style.css'
+import Label, { Color, Level } from '../../components/atoms/Label'
+import Container, { Theme } from '../../components/atoms/Container'
 import RewardDetails from '../../components/organism/RewardDetails'
 import StickyButton from '../../components/organism/StickyButton'
 import LoadingDialog from '../../components/organism/modal/LoadingDialog'
-import RedeemDialog from '../../components/organism/modal/Dialog'
+import Dialog, { Type as DialogType } from '../../components/organism/modal/Dialog'
 import { REDEMPTION_TYPE } from '../../general/Enums'
 import { CloseButtonType } from '../../components/organism/modal/Container'
 
@@ -15,6 +16,8 @@ export default class Details extends Component {
       this.state = {
         isLoading: true,
         hideRedeemDialog: true,
+        hideQrDialog: true,
+        hideCodeDialog: true,
         reward: null,
         isStickyButtonDisabled: false
       };
@@ -41,24 +44,32 @@ export default class Details extends Component {
   renderRewardDetail() {
     const reward = this.state.reward
     return <RewardDetails
-    bannerImageSource = {reward.image}
-    bannerImageAlt = {reward.title}
-    bannerLabelTitle = {reward.flash_sale_date !== '-1' && reward.flash_sale_date ? 'flash sale' : null}
-    avatarImageSource = {reward.vendor_image}
-    avatarImageAlt = {reward.vendor_name}
-    avatarTitle = {reward.vendor_name}
-    avatarSubtitle = {reward.redemption_type}
-    title = {reward.title}
-    subtitle = {reward.subtitle}
-    redemptionPeriod = {reward.redemption_period}
-    website = {reward.vendor_website}
-    location = {reward.vendor_location}
-    faqs = {reward.faqs}/>
+      bannerImageSource = {reward.image}
+      bannerImageAlt = {reward.title}
+      bannerLabelTitle = {reward.flash_sale_date !== '-1' && reward.flash_sale_date ? 'flash sale' : null}
+      avatarImageSource = {reward.vendor_image}
+      avatarImageAlt = {reward.vendor_name}
+      avatarTitle = {reward.vendor_name}
+      avatarSubtitle = {reward.redemption_type}
+      title = {reward.title}
+      subtitle = {reward.subtitle}
+      redemptionPeriod = {reward.redemption_period}
+      website = {reward.vendor_website}
+      location = {reward.vendor_location}
+      faqs = {reward.faqs}/>
   }
 
   onStickyButtonClicked() {
     if (this.props.isAuthenticated) {
-      this.showRedeemDialog()
+      if (this.state.reward.is_redeemed) {
+        if (this.state.reward.redemption_type.toLowerCase() === REDEMPTION_TYPE.REDEEM_ONLINE.toLowerCase()) {
+          this.hideRewardCodeDialog(false)
+        } else {
+          this.hideRewardQRDialog(false)
+        }
+      } else {
+        this.showRedeemDialog()
+      }
     } else {
       this.props.history.push('/verify');
     }
@@ -109,10 +120,26 @@ export default class Details extends Component {
           return "Time left to redeem "
         }
       } else {
-        return "This offer is valid for 60 minutes upon redemption"
+        if (Date.now() > this.state.reward.expiry_date) {
+          return "This offer is expired"
+        } else {
+          if (Date.now() < this.state.reward.flash_sale_date) {
+            return "Flash Sale starts in"
+          } else {
+            return "This offer is valid for 60 minutes upon redemption"
+          }
+        }
       }
     } else {
       return "This offer is valid for 60 minutes upon redemption"
+    }
+  }
+
+  getCountDownDate() {
+    if (Date.now() < this.state.reward.flash_sale_date) {
+      return parseInt(this.state.reward.flash_sale_date,10)
+    } else {
+      return this.state.reward.redemption_expired_time
     }
   }
 
@@ -128,10 +155,34 @@ export default class Details extends Component {
     })
   }
 
-  disableStickyButton() {
+  hideRewardCodeDialog(value) {
     this.setState({
-      isStickyButtonDisabled: true
+      hideCodeDialog: value
     })
+  }
+
+  hideRewardQRDialog(value) {
+    this.setState({
+      hideQrDialog: value
+    })
+  }
+
+  disableStickyButton(value) {
+    this.setState({
+      isStickyButtonDisabled: value
+    })
+  }
+
+  onTimerCompleted() {
+    if(Date.now() >= this.state.reward.flash_sale_date) {
+      if (this.state.reward.redemption_expired_time && Date.now() >= this.state.reward.redemption_expired_time) {
+        this.disableStickyButton(true)
+      } else {
+        this.disableStickyButton(false)
+      }
+    } else {
+      this.disableStickyButton(true)
+    }
   }
 
   render() {
@@ -139,9 +190,43 @@ export default class Details extends Component {
     return (
       <div className="pages-details-container">
         <LoadingDialog isHidden={!this.state.isLoading}/>
-        <RedeemDialog className="pages-details-redeem-dialog"
+        <Dialog className="pages-details-code-dialog"
+          isHidden={this.state.hideCodeDialog}
+          closeButtonType={CloseButtonType.HIDE}
+          title="Your offer is ready"
+          subtitle={"Apply this code during checkout"}
+          negativeTitle={"COPY CODE"}
+          affirmativeTitle={"SHOP NOW"}
+          onNegativeButtonClick={() => {this.hideRewardCodeDialog(true)}}
+          onAffirmativeButtonClick={() => {
+            this.hideRewardCodeDialog(true);
+          }}
+          onCloseButtonClick={() => {this.hideRewardCodeDialog(true)}}>
+          <Container theme={Theme.BORDER}>
+            <Label level={Level.H2_BOLD} color={Color.BLACK}>
+            {this.state.reward && this.state.reward.reward_code}
+            </Label>
+          </Container>
+        </Dialog>
+        <Dialog className="pages-details-qr-dialog"
+          type={DialogType.ONE_BUTTON}
+          isHidden={this.state.hideQrDialog}
+          closeButtonType={CloseButtonType.HIDE}
+          title="Your offer is ready"
+          subtitle={"Present this qr to the offline store. The offer would be automatically applied to your purchases"}
+          affirmativeTitle={"OKAY"}
+          onAffirmativeButtonClick={() => {
+            this.hideRewardQRDialog(true);
+          }}
+          onCloseButtonClick={() => {this.hideRewardQRDialog(true)}}>
+          <Container theme={Theme.BORDER}>
+            {this.state.reward && <img src={this.state.reward.reward_qr} alt="qr reward"/>}
+          </Container>
+        </Dialog>
+        <Dialog className="pages-details-redeem-dialog"
           isHidden={this.state.hideRedeemDialog}
-          closeButtonType={CloseButtonType.CROSS} title="Redeem this offer now?"
+          closeButtonType={CloseButtonType.CROSS}
+          title="Redeem this offer now?"
           subtitle={"Do note that you only have 60 minutes to use the offer once you proceed"}
           negativeTitle={"CANCEL"}
           affirmativeTitle={"PROCEED"}
@@ -155,9 +240,9 @@ export default class Details extends Component {
         <div className="pages-details-empty-space"></div>
         {this.state.reward !== null && <StickyButton
           className="pages-details-sticky-button"
-          isButtonDisabled={Date.now() > this.state.reward.redemption_expired_time || this.state.isStickyButtonDisabled}
-          countDownDate={this.state.reward.redemption_expired_time}
-          onTimerCompleted={() => {this.disableStickyButton()}}
+          isButtonDisabled={Date.now() <= this.state.reward.flash_sale_date || Date.now() >= this.state.reward.redemption_expired_time || this.state.isStickyButtonDisabled}
+          countDownDate={this.getCountDownDate()}
+          onTimerCompleted={() => {this.onTimerCompleted()}}
           labelTitle={this.getLabelTitle()}
           buttonTitle={this.getButtonTitle()}
           onClick={() => {this.onStickyButtonClicked()}} />}

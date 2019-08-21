@@ -8,3 +8,18 @@
 .pages-details-redeem-dialog {
   width: 300px;
   height: 220px; }
+
+.pages-details-code-dialog {
+  width: 400px;
+  height: 200px; }
+  @media only screen and (max-width: 600px) {
+    .pages-details-code-dialog {
+      width: 280px; } }
+
+.pages-details-qr-dialog {
+  width: 400px;
+  height: 370px; }
+  @media only screen and (max-width: 600px) {
+    .pages-details-qr-dialog {
+      width: 280px;
+      height: 390px; } }
