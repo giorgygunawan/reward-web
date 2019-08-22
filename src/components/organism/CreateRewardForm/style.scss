@@ -1,0 +1,51 @@
+@import "../../../styles/_responsive.scss";
+@import "../../../styles/_colors.scss";
+@import "../../../styles/_fontstyle.scss";
+@import "../../../styles/_sizes.scss";
+
+.organism-create-reward-form {
+  display: flex;
+  flex-direction: column;
+  padding-left: $space-medium;
+  padding-right: $space-medium;
+}
+
+.organism-create-reward-form-button-submit {
+  width: 600px;
+  @include respond-to(handhelds) {
+    width: 90%;
+  }
+  @include respond-to(medium-screens) {
+    width: 90%;
+  }
+  margin-top: $space-medium;
+  margin-bottom: $space-medium;
+}
+.organism-create-reward-form-text-field {
+  width: 600px;
+  margin-top: $space-small;
+  margin-bottom: $space-small;
+  @include respond-to(handhelds) {
+    width: 90%;
+  }
+  @include respond-to(medium-screens) {
+    width: 90%;
+  }
+}
+
+.organism-create-reward-form-dropdown-text-field {
+  width: 600px;
+  @include respond-to(handhelds) {
+    width: 90%;
+  }
+}
+
+.organism-create-reward-form-label {
+  margin-top: $space-medium;
+  margin-bottom: $space-small;
+}
+
+.organism-create-reward-form-redemption-type-options-dialog {
+  width: 300px;
+  height: 200px;
+}

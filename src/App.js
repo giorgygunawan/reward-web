@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound';
 import Home from './pages/Home';
 import Details from './pages/Details';
 import Verification from './pages/Verification';
+import Admin from './pages/Admin';
 import NavigationBar from './components/organism/NavigationBar'
 import Footer from './components/organism/Footer'
 import AppliedRoute from './components/generic/AppliedRoute'
@@ -62,6 +63,7 @@ class App extends Component {
               <AppliedRoute exact path="/" component={Home} props={childProps} />
               <AppliedRoute exact path="/details/:reward_id/:created_at" component={Details} props={childProps} />
               <AppliedRoute exact path="/verify" component={Verification} props={childProps} />
+              <AppliedRoute exact path="/admin" component={Admin} props={childProps} />
               <AppliedRoute component={NotFound} />
             </AnimatedSwitch>
             <Footer/>

@@ -10,7 +10,7 @@ export default class Verification extends Component {
   }
   render() {
     return (
-      <div className="pages-details-container">
+      <div className="pages-verification-container">
         <SignInForm userSignedIn={() => {this.userSignedIn()}}/>
       </div>
     )

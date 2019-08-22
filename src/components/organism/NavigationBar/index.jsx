@@ -3,7 +3,7 @@ import {withRouter} from 'react-router'
 import { Auth } from "aws-amplify"
 import classnames from 'classnames'
 import Label, { Level as LabelLevel, Color as LabelColor } from '../../atoms/Label'
-import Button, { Theme } from '../../atoms/Button'
+import Button, { Theme, Size } from '../../atoms/Button'
 
 import './style.css'
 
@@ -35,7 +35,7 @@ const NavigationBar = (props: Props): Component => {
   )
   return (
     <div className={classProps}>
-      <Button theme={Theme.TEXT} onClick={() => {goToHome(history)}}>
+      <Button size={Size.NONE} theme={Theme.TEXT} onClick={() => {goToHome(history)}}>
         <Label className="organism-navigation-bar-title" level={LabelLevel.H2_BOLD} color={LabelColor.PRIMARY}> REWARDS </Label>
       </Button>
       <div className="empty-space"></div>
