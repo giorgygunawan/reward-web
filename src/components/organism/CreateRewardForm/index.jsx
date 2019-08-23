@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { API } from "aws-amplify";
 import Label, { Level as LabelLevel, Color as LabelColor } from '../../atoms/Label'
 import Button, { Type, Theme } from '../../atoms/Button'
-import TextField from '../../molecules/TextField'
+import TextField, { TextFieldType } from '../../molecules/TextField'
 import DropdownTextField from '../../molecules/DropdownTextField'
 import OptionGroupDialog from '../modal/OptionGroupDialog'
 import { REDEMPTION_TYPE } from '../../../general/Enums'
@@ -88,14 +88,13 @@ class CreateRewardForm extends Component {
     return this.state[this.RewardKey.image]
      && this.state[this.RewardKey.title]
      && this.state[this.RewardKey.subtitle]
-     && this.state[this.RewardKey.rewardCode]
-     && this.state[this.RewardKey.rewardQr]
-     && this.state[this.RewardKey.redemptionType]
+     && (this.state[this.RewardKey.redemptionType] === REDEMPTION_TYPE.REDEEM_ONLINE ? this.state[this.RewardKey.rewardCode]: this.state[this.RewardKey.rewardQr])
      && this.state[this.RewardKey.redemptionPeriod]
      && this.state[this.RewardKey.vendorName]
+     && this.state[this.RewardKey.vendorImage]
      && this.state[this.RewardKey.vendorWebsite]
      && this.state[this.RewardKey.vendorLocation]
-     && this.state[this.RewardKey.expiryDate]
+     && (this.state[this.RewardKey.expiryDate] && !isNaN(this.state[this.RewardKey.expiryDate]))
      && this.state[this.RewardKey.faqs]
   }
 
@@ -106,17 +105,22 @@ class CreateRewardForm extends Component {
       [this.RewardKey.image] : this.state[this.RewardKey.image],
       [this.RewardKey.title] : this.state[this.RewardKey.title],
       [this.RewardKey.subtitle] : this.state[this.RewardKey.subtitle],
-      [this.RewardKey.rewardCode] : this.state[this.RewardKey.rewardCode],
-      [this.RewardKey.rewardQr] : this.state[this.RewardKey.rewardQr],
       [this.RewardKey.redemptionType] : this.state[this.RewardKey.redemptionType],
+      [this.RewardKey.redemptionPeriod] : this.state[this.RewardKey.redemptionPeriod],
       [this.RewardKey.vendorName] : this.state[this.RewardKey.vendorName],
       [this.RewardKey.vendorWebsite] : this.state[this.RewardKey.vendorWebsite],
+      [this.RewardKey.vendorImage] : this.state[this.RewardKey.vendorImage],
       [this.RewardKey.vendorLocation] : this.state[this.RewardKey.vendorLocation],
       [this.RewardKey.expiryDate] : this.state[this.RewardKey.expiryDate],
       [this.RewardKey.faqs] : faqsArray
     }
-    if(this.state[this.RewardKey.flashSaleDate] && this.state[this.RewardKey.flashSaleDate].length > 0) {
+    if(this.state[this.RewardKey.flashSaleDate] && !isNaN(this.state[this.RewardKey.flashSaleDate])) {
       reward[this.RewardKey.flashSaleDate] = this.state[this.RewardKey.flashSaleDate]
+    }
+    if(this.state[this.RewardKey.redemptionType] === REDEMPTION_TYPE.REDEEM_ONLINE) {
+      reward[this.RewardKey.rewardCode] = this.state[this.RewardKey.rewardCode]
+    } else {
+      reward[this.RewardKey.rewardQr] = this.state[this.RewardKey.rewardQr]
     }
     return reward
   }
@@ -132,7 +136,6 @@ class CreateRewardForm extends Component {
       let requestContext = {
           body: this.getRewardRequestBody()
       };
-      console.log(requestContext.body);
       await API.post("rewards", url, requestContext);
       alert('reward created');
       this.setState({
@@ -166,7 +169,6 @@ class CreateRewardForm extends Component {
   }
 
   render() {
-    console.log(this.state)
     const { className } = this.props
     const classProps = classnames(
       "organism-create-reward-form",
@@ -216,7 +218,8 @@ class CreateRewardForm extends Component {
       textFieldPlaceHolder="Fill with epoch date E.g 1566405890000"
       textFieldLabelText="Reward Expiry Date"
       errorText="Reward Expiry Date can't be empty"
-      onChangeHandler={(value) => {this.setCurrentState(this.RewardKey.expiryDate, value.target.value)}}
+      textFieldType={TextFieldType.DATE}
+      onChangeHandler={(value) => {this.setCurrentState(this.RewardKey.expiryDate, Date.parse(value.target.value))}}
       isValid={!this.isFormError}
       />
       <DropdownTextField
@@ -227,27 +230,31 @@ class CreateRewardForm extends Component {
           this.setCurrentState("isRedemptionTypeDialogHidden", false)
         }}
       />
+    {this.state.redemption_type === REDEMPTION_TYPE.REDEEM_ONLINE ?
       <TextField
-      className="organism-create-reward-form-text-field organism-create-reward-form-text-field-reward-code"
-      textFieldPlaceHolder="Fill with reward code E.g REWARD1300XL"
-      textFieldLabelText="Reward Code"
-      errorText="Reward code can't be empty"
-      onChangeHandler={(value) => {this.setCurrentState(this.RewardKey.rewardCode, value.target.value)}}
-      isValid={!this.isFormError}
-      />
-      <TextField
-      className="organism-create-reward-form-text-field organism-create-reward-form-text-field-reward-qr"
-      textFieldPlaceHolder="Fill with QR image url E.g https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=example"
-      textFieldLabelText="Reward QR Code"
-      errorText="Reward QR Code can't be empty"
-      onChangeHandler={(value) => {this.setCurrentState(this.RewardKey.rewardQr, value.target.value)}}
-      isValid={!this.isFormError}
-      />
+    className="organism-create-reward-form-text-field organism-create-reward-form-text-field-reward-code"
+    textFieldPlaceHolder="Fill with reward code E.g REWARD1300XL"
+    textFieldLabelText="Reward Code"
+    errorText="Reward code can't be empty"
+    onChangeHandler={(value) => {this.setCurrentState(this.RewardKey.rewardCode, value.target.value)}}
+    isValid={!this.isFormError}
+    /> :
+    <TextField
+    className="organism-create-reward-form-text-field organism-create-reward-form-text-field-reward-qr"
+    textFieldPlaceHolder="Fill with QR image url E.g https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=example"
+    textFieldLabelText="Reward QR Code"
+    errorText="Reward QR Code can't be empty"
+    onChangeHandler={(value) => {this.setCurrentState(this.RewardKey.rewardQr, value.target.value)}}
+    isValid={!this.isFormError}
+    />}
+
+
       <TextField
       className="organism-create-reward-form-text-field organism-create-reward-form-text-field-redemption-period"
       textFieldPlaceHolder="Fill with Date Text range E.g 12 - 15 October 2019"
       textFieldLabelText="Reward Redemption Period"
       errorText="Reward Redemption Period can't be empty"
+      textFieldType={TextFieldType.TEXT}
       onChangeHandler={(value) => {this.setCurrentState(this.RewardKey.redemptionPeriod, value.target.value)}}
       isValid={!this.isFormError}
       />
@@ -255,7 +262,8 @@ class CreateRewardForm extends Component {
       className="organism-create-reward-form-text-field organism-create-reward-form-text-field-flash-sale-date"
       textFieldPlaceHolder="Fill to enable flash sale with epoch time E.g 1566405890000"
       textFieldLabelText="Reward Flash Sale Date"
-      onChangeHandler={(value) => {this.setCurrentState(this.RewardKey.flashSaleDate, value.target.value)}}
+      textFieldType={TextFieldType.DATE}
+      onChangeHandler={(value) => {this.setCurrentState(this.RewardKey.flashSaleDate, Date.parse(value.target.value))}}
       isValid={!this.isFormError}
       />
       <div className="organism-create-reward-form-faq-text-field-container">

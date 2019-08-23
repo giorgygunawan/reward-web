@@ -186,7 +186,6 @@ export default class Details extends Component {
   }
 
   render() {
-    console.log(this.state.reward);
     return (
       <div className="pages-details-container">
         <LoadingDialog isHidden={!this.state.isLoading}/>

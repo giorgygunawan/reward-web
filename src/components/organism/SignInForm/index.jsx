@@ -101,7 +101,7 @@ class SignInForm extends Component {
         textFieldName="ID_NUMBER"
         textFieldValue="MyKad Number"
         onHintClicked={() => {
-          console.log("hint clicked")
+
         }}
         onDropdownTextFieldClicked={() => {
           this.setIdTypeOptionsHidden(false)

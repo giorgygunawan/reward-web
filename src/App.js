@@ -29,8 +29,6 @@ class App extends Component {
     catch(e) {
       if (e !== 'No current user') {
         alert(e);
-      } else {
-        console.log('not logged in');
       }
     }
     this.setState({ isAuthenticating: false });

@@ -15,7 +15,7 @@ class LabeledCheckBox extends Component {
   }
 
   onChangeHandler(event) {
-    console.log(event.target.value)
+
   }
 
   changeState() {
