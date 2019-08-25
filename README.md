@@ -95,3 +95,21 @@ Atomic design is used to separate the responsibilities of the views to make it r
     *  Home
     *  NotFound
     *  Verification
+
+<H1> Network </H1>
+[Aws Amplify](https://aws.amazon.com/amplify/faqs/) is used in this project to make it fast and easy to authenticate with AWS Cognito and send HTTP request to REST API Gateway which invokes lambda function.
+User's identity is managed in cognito's identity pool to differ the role of the user (authenticated and unauthenticated) and differ their ability to access AWS functionality.
+
+<H1> Styling </H1>
+Sass is used in this project to reduce redundancy in styling code and to conform to atomic design (as Style is an Atom which should be defined initially)
+The core style is stored in `src/styles` and consist of 6 styles:
+
+* _colors.scss : manage the color
+* _font_sizes.scss : manage the font sizes 
+* _fontstyle.scss : alias of _typography to make it easier to be included in the project
+* _responsive.scss : manage responsive screen breaks
+* _sizes.scss : manage padding, spacing, and dimensions
+* _typography.scss : manage the font family
+
+<H1> Testing </H1>
+`This project lacks unit test as the creator needs more time to research Jest for React.` *a shame indeed
