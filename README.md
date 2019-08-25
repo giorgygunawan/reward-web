@@ -113,3 +113,17 @@ The core style is stored in `src/styles` and consist of 6 styles:
 
 <H1> Testing </H1>
 `This project lacks unit test as the creator needs more time to research Jest for React.` *a shame indeed
+
+<H1> NPM Script </H1>
+
+`npm install`
+installs dependency in package.json
+
+`npm start`
+build css from sass, add sass watcher, runs the app in development mode
+
+`npm build`
+build css from sass, build the app for production
+
+`npm test`
+test the project using jest
