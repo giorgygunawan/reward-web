@@ -55,7 +55,7 @@ Here are the functionalities that is available in the project.
 
 
 <H1> View Architecture </H1>
-This project used [`atomic design` principle by `brad frost`](http://reward-app-client.s3-website-us-east-1.amazonaws.com/verify).
+This project used [`atomic design` principle by `brad frost`](http://bradfrost.com/blog/post/atomic-web-design/).
 Atomic design is used to separate the responsibilities of the views to make it reusable and easier to maintain
 
 *  The base unit of view is atoms, this is the smallest unit of view which has no dependecies to another view:
