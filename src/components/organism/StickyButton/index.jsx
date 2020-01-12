@@ -56,7 +56,7 @@ StickyButton.propTypes = {
   labelTitle: PropTypes.string,
   buttonTitle: PropTypes.string,
   countDownDate: PropTypes.number,
-  isButtonDisabled: PropTypes.boolean,
+  isButtonDisabled: PropTypes.bool,
   onTimerCompleted: Function,
   onClick: Function
 }
